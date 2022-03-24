@@ -47,17 +47,8 @@
 			   }
 	
 	}
-	
-	    $(document).ready(function(){
-			$("button").click(function(){
-			   var t = $('#temp').val(t2);//celsius
-			   var u = $('#unit').val(u2);
-			    
-			   var chk =validate(t);
-               if (chk != null)return chk;			   
-			
-			   
-			   var t1;
+	function conversion(){
+	           var t1;
 			   var u1;
 			   
 			   if(u == "F"){
@@ -70,10 +61,22 @@
 					t1 = t * (4/5);
 					u1 = "Kelvin";
 			   }
+	}
+	
+	$(document).ready(function(){
+			$("button").click(function(){
+			   var t = $('#temp').val(t2);//celsius
+			   var u = $('#unit').val(u2);
+			    
+			   var chk =validate(t);
+               if (chk != null)return chk;			   
+			
+			   var con = conversion();
+			  
 			   
 			   alert("Temperature is "+t1+" in "+u1);
 			});
-		});
+	});
 	</script>
 </body>
 </html>
